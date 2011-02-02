@@ -8,6 +8,12 @@ import java.util.regex.Matcher;
 
 
 class HttpDownloader {
+    /** Downloads a website at the given url.
+     *
+     * This simply uses the well knows Scanner class, but
+     * we use a URLConnection as input to Scanner instead of a 
+     * file or System.in.
+     * */
     String download(String url) throws IOException {
         URLConnection connection = new URL(url).openConnection();
         String entirePage = "";
@@ -19,6 +25,13 @@ class HttpDownloader {
         return entirePage;
     }
 
+    /** Get a LinkedList of strings containing all urls on 
+     * the website at the given url.
+     *
+     * You will probably have some problems understanding all this code
+     * unless you are familiar with regular expressions. Do not
+     * worry about understanding it, and just see how it is used.
+     * */
     LinkedList<String> getUrls(String url) throws IOException {
         String entirePage = download(url);
         LinkedList<String> urlList = new LinkedList<String>();
