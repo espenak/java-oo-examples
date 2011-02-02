@@ -62,12 +62,10 @@ class ReallySimpleTextBasedWebBrowser {
     CommandFeed cli = new CommandFeed();
 
     ReallySimpleTextBasedWebBrowser() throws IOException {
-        while(true) {
-            printInputPrefix();
-            if(!cli.hasMoreCommands()) {
-                break;
-            }
+        printInputPrefix();
+        while(cli.hasMoreCommands()) {
             handleUserInput();
+            printInputPrefix();
         }
     }
 
