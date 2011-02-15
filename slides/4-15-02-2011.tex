@@ -1,5 +1,11 @@
 \documentclass[norsk]{beamer}
 \usepackage[latin1]{inputenc}
+
+\usepackage{listings}
+
+
+\lstset{language=Java}
+
 %\usetheme{Warsaw}
 \usetheme[sky-200]{UiO}
 
@@ -17,62 +23,155 @@ Institutt for informatikk
 }
 \subject{Objektorientert programmering}
 
+% \AtBeginSection[]
+% {
+%    \begin{frame}
+%        \frametitle{Disposisjon}
+%        \tableofcontents[currentsection]
+%    \end{frame}
+% }
 
 
 
 \begin{document}
 
-\section{Intro}
-\subsection{Velkommen}
-
 \begin{frame}
 \frametitle{Velkommen!}
+\tableofcontents
 \end{frame}
 
-\begin{frame}
-\titlepage 
-\end{frame}
+ \begin{frame}
+ \titlepage 
+ \end{frame}
 
 \begin{frame}
 \frametitle{Idag}
 \begin{itemize}
-\pause	\item Oppgaver
-\pause \item Subklasser
-\pause \item Exceptions
-\pause	\item Versjonskontroll
-\pause \item Introduksjon til neste uke
+  \pause \item Oppgaver
+  \pause \item Generics
+  \pause \item Package
+  \pause \item Polymorfi
 \end{itemize}
 \end{frame}
 
-\section{Google is your friend}
-\subsection{Informasjon}
+\section{Ukeoppgaver}
 
 \begin{frame}
-\frametitle{Tips og triks}
-\begin{itemize}
-\pause	\item http://lmgtfy.com/
-\pause	\item http://justfuckinggoogleit.com/
-\pause	\item Java API
-\pause \item Java Tutorials
-\end{itemize}
+\frametitle{La oss gyve løs på oppgavene!}
+\end{frame}
+
+
+\subsection{Oppgave 1}
+
+\begin{frame}
+  \frametitle{Oppgave 1}
+  \begin{columns}[c] % the "c" option specifies center vertical alignment
+    \begin{column}{0.5\textwidth} % column designated by a command      
+      
+      \lstinputlisting{oppgave1.java}
+      
+    \end{column}
+   
+    \begin{column}{0.5\textwidth}
+      \begin{enumerate}
+       \item{\color<2->{green}{X xy = new Y();}}
+       \item{\color<3->{green}{Y yy = new Y();}}
+       \item{\color<4->{red}{Y yx = new X();}}
+       \item{\color<5->{green}{Y yz = new Z();}}
+       \item{\color<6->{green}{Z zz = new Z();}}
+       \item{\color<7->{red}{Z zx = (Z) new X();}}
+    \end{enumerate}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 
 \begin{frame}
-\frametitle{Versjonskontroll}
+  \frametitle{Oppgave 1}
+  \begin{columns}[c] % the "c" option specifies center vertical alignment
+    \begin{column}{0.5\textwidth} % column designated by a command      
+      
+      \lstinputlisting{oppgave1b.java}
+      
+    \end{column}
+   
+    \begin{column}{0.5\textwidth}
+      \begin{enumerate}
+       \item{\color<2->{green}{y instanceof X}}
+       \item{\color<3->{green}{y instanceof Y}}
+       \item{\color<4->{red}{x instanceof Y}}
+       \item{\color<5->{green}{z instanceof Y}}
+       \item{\color<6->{green}{z instanceof Z}}
+       \item{\color<7->{red}{x instanceof Z}}
+    \end{enumerate}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Oppgave 1}
+	\Large Svarene var like, hvorfor det?
+\end{frame}
+
+\subsection{Oppgave 2}
+
+\begin{frame}
+	\frametitle{Oppgave 2}
+	\Large Diskuter bruk av instanceof. I hvilke tilfeller kan man bruke \textbf{instanceof} og når bør man unngå det?
+\end{frame}
+
+\subsection{Oppgave 3}
+
+\begin{frame}
+	\frametitle{Oppgave 3}
+	\begin{enumerate}
+	\item Kan du alltid konvertere fra en subklasse- til en superklasse-peker? Begrunn svaret.
+	\item Kan du alltid konvertere fra en superklasse- til en subklasse-peker? Begrunn svaret.
+	\item Når må og når kan man bruke typekonvertering (casting): \textit{EnKlasse peker = (EnAnnenKlasse) enAnnenPeker;}
+	\end{enumerate}
+\end{frame}
+
+
+\section{Generics}
+
+\begin{frame}
+\frametitle{Generics}
 \begin{itemize}
-\pause	\item Git
-\pause	\item Hva og hvordan? 
+  \pause \item Hva og hvorfor?
+  \pause \item Stikkord: Abstraksjon
+  \pause \item Compile-time typesikkerhet for typer som spesifiseres senere.
+  \pause \item Fjerner unødig typekonvertering.
+  \pause \item Ypperlig for \textbf{Collections}
+  \pause \item Suns, nå Oracles tutorial er suveren. 
 \end{itemize}
 \end{frame}
 
-% \begin{frame}
-%     \begin{columns}[c] % the "c" option specifies center vertical alignment
-%     \column{.5\textwidth} % column designated by a command
-%      Contents of the first column
-%     \column{.5\textwidth}
-%      Contents split \\ into two lines
-%     \end{columns}
-% \end{frame}
+\section{Package}
+
+\begin{frame}
+\frametitle{Package}
+\begin{itemize}
+  \pause \item Organisering av Java-klasser
+  \pause \item Spesifiserer egne navnerom
+  \pause \item Etterhvert som programmene blir større er god organisering viktig!
+  \pause \item \textbf{protected} - skjuler tilgang innenfor pakken og av subklasser.
+\end{itemize}
+\end{frame}
+
+\section{Polymorfi}
+
+\begin{frame}
+\frametitle{Polymorfi}
+\begin{itemize}
+  \pause \item Arver ikke bare attributter, men også metoder.
+  \pause \item Virtuelle metoder redefineres i subklassen.
+  \pause \item Dynamisk binding av metoder.
+  \pause \item Overloading av metoder.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+ \huge Og nå endelig programmering!
+\end{frame}
 
 \end{document}
