@@ -5,7 +5,7 @@
  *
  * @see -http://en.wikipedia.org/wiki/Stack_(data_structure)
  */
-public class Stack<E extends Comparable<E>> {
+class Stack<E extends Comparable<E>> {
 
     /**
      * Points to the node at the top of the stack.
@@ -51,14 +51,14 @@ public class Stack<E extends Comparable<E>> {
 
 public class StackExample {
 
-    Stack<String> s = new Stack<String>();
-
-    s.add("Katherine");
-    s.add("Joseph");
-
-    System.out.println(s.contains("Katherine"));
-
-    System.out.println(s.contains("Jermaine"));
-
-    
+    public static void main (String[] args) {
+	Stack<String> s = new Stack<String>();
+	
+	s.add("Katherine");
+	s.add("Joseph");
+	
+	System.out.println(s.contains("Katherine"));
+	
+	System.out.println(s.contains("Jermaine"));
+    }
 }
