@@ -53,29 +53,18 @@ public class ArrayIteratorTest {
 	
 	ArrayExample<String> ae = new ArrayExample<String>();
 
-//	ae.add("Tor Ivar");
-//	ae.add("Espen");
-//	ae.add("Magnus Christensen");
-//	ae.add("Deep Purple");
-//
+	ae.add("Tor Ivar");
+	ae.add("Espen");
+	ae.add("Stein");
+
 	Iterator it = ae.iterator();
 
 	while(it.hasNext()) {
-	    System.out.println(it.next());
-	    //it.remove();     
+	    System.out.println(it.next());    
 	}
-
 
 	for (String s: ae) {
-	    System.out.println("for each: " + s);
+	    System.out.println("foreach: " + s);
 	}
-
-	it = ae.iterator();
-
-	while(it.hasNext()) {
-	    System.out.println(it.next());
-	}
-
-
     }
 }
