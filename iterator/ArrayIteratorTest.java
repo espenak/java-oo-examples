@@ -1,17 +1,17 @@
 import java.util.Iterator;
 
-class ArrayExample<E extends Comparable<E>> {
+class ArrayExample<E extends Comparable<E>> implements Iterable<E> {
     
     E[] elements;
     int index;
-
+    
     @SuppressWarnings({"unchecked"})
-    public ArrayExample() {
+	public ArrayExample() {
 	elements = (E[]) new Comparable[16];
 	index = 0;
     }
     
-    public void add(E elem) {
+    public void add(E elem)       {
 	elements[index++] = elem;
     }
 
@@ -62,9 +62,13 @@ public class ArrayIteratorTest {
 
 	while(it.hasNext()) {
 	    System.out.println(it.next());
-	    it.remove();
+	    //it.remove();     
 	}
 
+
+	for (String s: ae) {
+	    System.out.println("for each: " + s);
+	}
 
 	it = ae.iterator();
 

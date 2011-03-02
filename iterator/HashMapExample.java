@@ -17,6 +17,7 @@ public class HashMapExample {
 	    System.out.println(it.next());
 	}
 
+
 	Iterator it2 = test.values().iterator();
 
 	while(it2.hasNext()) {
