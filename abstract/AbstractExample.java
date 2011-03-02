@@ -1,11 +1,5 @@
 abstract class Animal {
 
-    void hei() {
-	int i = 0;
-    }
-
-    abstract void hei2();
-    
 }
 
 abstract class Carnivore extends Animal {
