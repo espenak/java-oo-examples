@@ -41,7 +41,7 @@ class ArrayExample<E extends Comparable<E>> implements Iterable<E> {
 		elements[pos-1] = null;
 	    }
 	    nextIsRun = false;
-	}
+ 	}
     }
 }
 
@@ -53,11 +53,11 @@ public class ArrayIteratorTest {
 	
 	ArrayExample<String> ae = new ArrayExample<String>();
 
-	ae.add("Tor Ivar");
-	ae.add("Espen");
-	ae.add("Magnus Christensen");
-	ae.add("Deep Purple");
-
+//	ae.add("Tor Ivar");
+//	ae.add("Espen");
+//	ae.add("Magnus Christensen");
+//	ae.add("Deep Purple");
+//
 	Iterator it = ae.iterator();
 
 	while(it.hasNext()) {
