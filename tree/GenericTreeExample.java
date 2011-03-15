@@ -1,6 +1,28 @@
-package stuff;
-import java.util.Collection;
-import java.util.ArrayList;
+class Person implements Comparable<Person> {
+    String name;
+    Integer score;
+
+    Person(String name, int score) {
+        this.name = name;
+        this.score = score;
+    }
+
+    public int compareTo(Person other) {
+        //if(this.score < other.score) {
+            //return -1;
+        //} else if(this.score == other.score) {
+            //return 0;
+        //} else {
+            //return 1;
+        //}
+        return score.compareTo(other.score);
+    }
+
+    public String toString() {
+        return name + ":" + score;
+    }
+}
+
 
 class GenericTree<V extends Comparable<V>> {
     protected Node root;
@@ -15,31 +37,24 @@ class GenericTree<V extends Comparable<V>> {
         }
     }
 
-    public GenericTree() {
-    }
-
-    public GenericTree(Collection<V> values) {
-        for (V value : values)
-            add(value);
-    }
-
-    protected Node add(V value, Node cur) {
-        if (cur == null) {
-            size++;
-            return new Node(value);
+    protected void add(V value, Node cur) {
+        if (value.compareTo(cur.value) < 0) {
+            if(cur.left == null) {
+                cur.left = new Node(value);
+            } else {
+                add(value, cur.left);
+            }
         }
-
-        if (value.compareTo(cur.value) == 0)
-            ;
-        else if (value.compareTo(cur.value) < 0)
-            cur.left = add(value, cur.left);
-        else
-            cur.right = add(value, cur.right);
-        return cur;
-    }
-
-    public int size() {
-        return size;
+        else if (value.compareTo(cur.value) > 0) {
+            if(cur.right == null) {
+                cur.right = new Node(value);
+            } else {
+                add(value, cur.right);
+            }
+        }
+        else {
+            throw new RuntimeException("Duplicates not supported!");
+        }
     }
 
     public void add(V value) {
@@ -47,7 +62,11 @@ class GenericTree<V extends Comparable<V>> {
             throw new NullPointerException(
                     "This tree does not support null elements.");
         }
-        root = add(value, root);
+        if(root == null) {
+            root = new Node(value);
+        } else {
+            add(value, root);
+        }
     }
 
     private void print(Node n) {
@@ -73,5 +92,13 @@ public class GenericTreeExample {
         t.add(9);
         t.add(1);
         t.print();
+
+
+        GenericTree<Person> p = new GenericTree<Person>();
+        p.add(new Person("Batman", 11));
+        p.add(new Person("Superman", 10));
+        p.add(new Person("Michael Jackson", 100000));
+        p.add(new Person("Catwoman", 6));
+        p.print();
     }
 }

@@ -10,7 +10,7 @@ class Stack<E extends Comparable<E>> {
     /**
      * Points to the node at the top of the stack.
      */
-    protected StackNode<E> top;
+    StackNode<E> top;
 
     /**
      * Add an element to the stack.
@@ -60,5 +60,14 @@ public class StackExample {
 	System.out.println(s.contains("Katherine"));
 	
 	System.out.println(s.contains("Jermaine"));
+	
+	Stack<Integer> s2 = new Stack<Integer>();
+
+	s2.add(40);
+
+	System.out.println(s2.contains(40));
+
+
+	
     }
 }
