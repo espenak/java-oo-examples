@@ -16,25 +16,19 @@ public class CircleGui {
 }
 
 class FigurePanel extends JPanel {
-
     private Point ovalCenter = new Point(61, 61);
     private Dimension ovalDim = new Dimension(100, 100);
-
-    //private Point rect = new Point(161, 161);
     
     FigurePanel() {
-
         setPreferredSize(new Dimension(330, 330));
 
         addMouseListener(new MouseAdapter() {
-            @Override
             public void mousePressed(MouseEvent e) {
                 updatePoint(ovalCenter, e.getPoint());
             }
         });
 
         addMouseMotionListener(new MouseAdapter() {
-            @Override
             public void mouseDragged(MouseEvent e) {
                 updatePoint(ovalCenter, e.getPoint());
             }
@@ -42,14 +36,10 @@ class FigurePanel extends JPanel {
     }
 
     private void updatePoint(Point to, Point from) {
-        //to = from; // Hvorfor går ikke dette?
         to.setLocation(from);
-        repaint(); // vi kan også spesifisere bare det området vi vil ha retegnet.
-        //repaint(new Rectangle(ovalCenter, ovalDim)); //hva må gjøres for å få denne riktig?
+        repaint();
     }
     
-    //public Dimension getPreferredSize() {return new Dimension(330, 330);}
-
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
