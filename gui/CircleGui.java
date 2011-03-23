@@ -21,18 +21,19 @@ class FigurePanel extends JPanel {
     
     FigurePanel() {
         setPreferredSize(new Dimension(330, 330));
-
-        addMouseListener(new MouseAdapter() {
-            public void mousePressed(MouseEvent e) {
-                updatePoint(ovalCenter, e.getPoint());
-            }
-        });
-
+        addMouseListener(new OnMousePressed());
         addMouseMotionListener(new MouseAdapter() {
             public void mouseDragged(MouseEvent e) {
                 updatePoint(ovalCenter, e.getPoint());
             }
         });
+    }
+
+
+    private class OnMousePressed extends MouseAdapter {
+        public void mousePressed(MouseEvent e) {
+            updatePoint(ovalCenter, e.getPoint());
+        }
     }
 
     private void updatePoint(Point to, Point from) {
