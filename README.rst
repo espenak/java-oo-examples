@@ -4,7 +4,7 @@ Java examples.
 Download everything (in Norwegian)
 ==================================
 
-Den beste måten å hente ut alle løsningforslag og holde deg oppgatert er med
+Den beste metoden for å hente ut alle løsningforslag og å holde deg oppgatert er med
 GIT. Se `denne bloggposten`_ for informasjon om hvordan du bruker git.
 
 Du kan også laste ned alle filene med *Download*-knappen på toppen av siden.
