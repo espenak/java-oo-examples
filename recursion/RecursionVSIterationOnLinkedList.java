@@ -1,6 +1,5 @@
 
 public class RecursionVSIterationOnLinkedList extends IterableStack<Long> {
-// Stack<Long> {
 
     public RecursionVSIterationOnLinkedList() {
         super();
@@ -29,7 +28,7 @@ public class RecursionVSIterationOnLinkedList extends IterableStack<Long> {
      */
     public static void main(String[] args) {
         RecursionVSIterationOnLinkedList rec = new RecursionVSIterationOnLinkedList();
-        final long N = 1000000;//10524;
+        final long N = 1000000;
 
         //System.out.println(Integer.MAX_VALUE + " " + Long.MAX_VALUE);
 

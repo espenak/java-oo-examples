@@ -1,13 +1,5 @@
-package recursion;
-
+// http://heim.ifi.uio.no/inf1010/blog/?p=1431
 public class SmartTrucks {
-    /**
-     * Calculates the number of trips a smart truck needs to move some crates.
-     *
-     * @param crates   The number of crates to be moved.
-     * @param capacity The number of crates that can be moved in one go.
-     * @return The number of trips needed to move all the crates.
-     */
     public static int smartTrucks(int crates, int capacity) {
         // If there are zero or less crates, we are done. No trips required.
         if (crates <= 0)

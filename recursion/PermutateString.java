@@ -6,7 +6,9 @@ public class PermutateString {
             return;
         }
         for (char c : input) {
-            perm(result + c, input);
+            if(result.indexOf(c) == -1) {
+                perm(result + c, input);
+            }
         }
     }
 
