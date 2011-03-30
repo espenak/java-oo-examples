@@ -45,7 +45,17 @@ Institutt for informatikk
 
 \begin{frame}
 \frametitle{Rekursjon}
-Gjentakelse/repitisjon i en selvliknende måte.
+Gjentakelse/repetisjon i en selvliknende måte.
+\end{frame}
+
+\begin{frame}
+  \textbf{Rekursjon} \\
+       \hspace{2cm}se rekursjon
+\end{frame}
+
+\begin{frame}
+  \textbf{Rekursjon} \\
+       \hspace{2cm}om du fortsatt ikke forstår: se rekursjon
 \end{frame}
 
 %http://www.post-literate.com/gerpunx/archives/2005/01/prepare_to_lose_your_mind.php
@@ -58,11 +68,24 @@ Gjentakelse/repitisjon i en selvliknende måte.
 \begin{frame}
   \frametitle{Rekursjon i programmering}
   \begin{itemize}
-  \pause \item Dele problemer inn i subproblemer av samme type
   \pause \item Divide and conquer
-  \pause \item Basistilfellet bestemmer når problemet er løst
+  \pause \item Dele problemer inn i subproblemer av samme type
+  \pause \item Basistilfellet bestemmer når rekursjonen er over
   \end{itemize}
 \end{frame}
+
+%\lstset{language=Java, backgroundcolor=\color{yellow}, basicstyle=8pt, commentstyle=\color{green}}
+
+\begin{frame}[fragile]
+  \frametitle{Uendelig rekursjon}
+     \begin{lstlisting}
+       void forever() {
+         forever();
+       }
+     \end{lstlisting}
+
+\end{frame}
+
 
 
 \end{document}
