@@ -1,5 +1,3 @@
-package sorting;
-
 import java.util.Collection;
 
 public class TreeSort {
