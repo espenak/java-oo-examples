@@ -1,0 +1,110 @@
+\documentclass[norsk]{beamer}
+\usepackage[latin1]{inputenc}
+
+\usepackage{listings}
+
+
+\lstset{language=Java}
+
+%\usetheme{Warsaw}
+\usetheme[sky-200]{UiO}
+
+%\useinnertheme[shadow]{rounded}
+\urlstyle{sf}
+
+\title[INF1010]%(optional, only for long titles)
+{INF1010 - Fellesøvelser}
+\subtitle{Praktisk gjennomgang av programmeringsteknikker}
+\author[Tor Ivar Johansen] % (optional, for multiple authors)
+{Tor Ivar Johansen  \and Karoline Lunder \and Magnus Dæhlen}
+\institute[Universitetet i Oslo] % (optional)
+{
+Institutt for informatikk
+}
+\subject{Objektorientert programmering}
+
+% \AtBeginSection[]
+% {
+%    \begin{frame}
+%        \frametitle{Disposisjon}
+%        \tableofcontents[currentsection]
+%    \end{frame}
+% }
+
+
+
+\begin{document}
+
+\begin{frame}
+\huge INF1010 - Fellesøvelse
+\end{frame}
+
+ \begin{frame}
+ \titlepage 
+ \end{frame}
+
+\begin{frame}
+\frametitle{Tråder}
+\begin{itemize}
+\item Hva
+\item Hvordan
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Tråder}
+  \begin{itemize}
+  \item Tråder er lettvekt prosesser
+  \item Tråder håndteres av OS-kjernen
+  \item Tråder deler minne og ressurser
+  \item Tråder kan switches betydelig raskere
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Tråder i java}
+  \begin{itemize}
+  \item Du har alltid en tråd, main tråden
+  \item Derfra kan du lage flere tråder.
+  \item Du kan også prioritere tråder over andre.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Tråder i java}
+  \begin{itemize}
+  \item Kan lages på to måter
+    \begin{itemize}
+    \item extend \textbf{Thread} klassen
+    \item implement \textbf{Runnable} grensesnittet
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Extend \textbf{Thread} klassen}
+  \begin{itemize}
+  \item Må override \texttt{run()} metoden.
+  \item Objektet instansieres og \texttt{start()} metoden må kalles
+  \item Kjøringen startes så av Java Runtime
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{implement \textbf{Runnable} grensesnittet}
+  \begin{itemize}
+  \item Må implementere \texttt{run()} metoden.
+  \item Må instansiere nytt \textbf{Thread} objekt og sende seg selv med som parameter
+  \item \texttt{start()} metoden må kalles for videre håndtering av Java Runtime
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Hva er best?}
+  \begin{itemize}
+  \item Opptil deg selv.
+  \item extend-alternativet gir mindre kode, men hindrer deg i å extende andre klasser
+  \end{itemize}
+\end{frame}
+
+\end{document}
