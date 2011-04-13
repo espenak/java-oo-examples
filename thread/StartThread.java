@@ -1,5 +1,3 @@
-package threads;
-
 public class StartThread extends Thread implements Runnable {
 
     public StartThread(int forNothing) {
@@ -71,6 +69,7 @@ public class StartThread extends Thread implements Runnable {
             if (i == 5000) try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
+		    System.out.println("Ble interrupted");
             }
         }
         System.out.println(t.getName() + ". End of work.");
