@@ -1,0 +1,124 @@
+\documentclass[norsk]{beamer}
+\usepackage[latin1]{inputenc}
+
+\usepackage{listings}
+
+
+\lstset{language=Java}
+
+%\usetheme{Warsaw}
+\usetheme[sky-200]{UiO}
+
+%\useinnertheme[shadow]{rounded}
+\urlstyle{sf}
+
+\title[INF1010]%(optional, only for long titles)
+{INF1010 - Fellesøvelser}
+\subtitle{Praktisk gjennomgang av programmeringsteknikker}
+\author[Tor Ivar Johansen] % (optional, for multiple authors)
+{Tor Ivar Johansen  \and Magnus Dæhlen}
+\institute[Universitetet i Oslo] % (optional)
+{
+Institutt for informatikk
+}
+\subject{Objektorientert programmering}
+
+% \AtBeginSection[]
+% {
+%    \begin{frame}
+%        \frametitle{Disposisjon}
+%        \tableofcontents[currentsection]
+%    \end{frame}
+% }
+
+
+
+\begin{document}
+
+\begin{frame}
+\huge INF1010 - Fellesøvelse
+\end{frame}
+
+ \begin{frame}
+   \titlepage 
+ \end{frame}
+
+
+ \begin{frame}
+   \frametitle{Sortering}
+ \end{frame}
+
+\begin{frame}
+  \frametitle{Idag}
+  \begin{itemize}
+  \item Ulike sorteringsalgoritmer
+  \item Litt om kompleksitet
+  \item Noen vanlige begreper
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Kompleksitet}
+  \begin{itemize}
+  \item Stor O - notasjon
+  \item Vi vil helst ha sorteringen ferdig innen rimelig tid.
+  \item Kommer best til syne når man undersøker trege sorteringsalgoritmer
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Hvor lang tid?}
+  \begin{description}
+  \item[Worst case] Hvor lang tid det tar på det meste
+  \item[Best case] Hvor lang tid det tar på det minste
+  \item[Average case] Hvor lang tid det tar i gjennomsnitt
+  \end{description}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Begreper}
+  \begin{description}
+  \item[Stabilitet] Er ting i rett rekkefølge etter sortering? Dette bryr vi oss ikke med når vi sorterer tall feks.
+  \item[In-place] Trenger ikke ytterligere minne.
+  \item[Adaptiv] Fungerer det bedre om listen allerede er noe sortert?
+  \end{description}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Nye algoritmer?}
+  \begin{itemize}
+  \item Det forskes.
+  \item library-sort kom på 2000-tallet
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Splitt og hersk}
+  \begin{enumerate}
+  \item \textbf{Divide} Hvis inputstørrelsen er mindre en angitt mål - løs problemet direkte. Ellers del opp.
+  \item \textbf{Recursion} Rekursjer over de mindre delene
+  \item \textbf{Conquer} Kombiner løsningene for smådelene
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Bubblesort}
+  \begin{itemize}
+  \item Enkel
+  \item Lett å programmere
+  \item Men håpløst treg
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Merge Sort}
+  \begin{itemize}
+  \item Typisk splitt og hersk
+  \item \textbf{Divide} Er lengden på listen $1$ eller $0$ er listen sortert. Ellers del i to.
+  \item \textbf{Recursion} Rekursjon over hver del vil gjøre susen!
+  \item \textbf{Conquer} Sammenflett hver del.
+  \end{itemize}
+\end{frame}
+
+\end{document}
